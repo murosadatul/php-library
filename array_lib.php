@@ -11,8 +11,17 @@ $data = array(
       )
   );
 
+  // asc sorting data
   function sortFunction( $a, $b ) {
       return strtotime($a["date"]) - strtotime($b["date"]);
+  }
+  
+  usort($data, "sortFunction");
+  var_dump($data);
+
+  //desc sorting data
+  function sortFunction( $a, $b ) {
+      return strtotime($b["date"]) - strtotime($a["date"]);
   }
   
   usort($data, "sortFunction");
